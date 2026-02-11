@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <a href="/">Home</a>
+    </p>
+    <p>
+        <a href="/navigation/about/">navigation/ About</a>
+    </p>
+    <p>
+        <a href="/navigation/contact/">navigation/ Contact</a>
+    </p>
+    <h1>This is about page</h1>
+    <h1>{{ls}}</h1>
+    <h1>Name: {{name}}</h1>
+
+    <!-- Conditional -->
+     {% if age >= 18 %}
+     <p>You'll get driving license</p>
+     {% elif age >= 10 and age <= 17 %}
+     <p>You won't get driving license</p>
+     {% else %}
+     <p>You're a child</p>
+     {% endif %}
+
+
+    {% comment %} for loop {% endcomment %}
+    {% for i in Courses %}
+    <p>{{i.name}} {{i.Fees}}</p>
+    {% endfor %}
+</body>
+</html>
