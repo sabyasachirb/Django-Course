@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Homepage{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="hm">
+<div class="content">
+<h1>Taste the Season.</h1>
+<h3>Farm-to-table dining in the heart of the city.</h3>
+<p>We believe in sustainable,
+ locally sourced ingredients crafted into unforgettable dishes. Come experience warmth, community, and exceptional flavor.</p>
+</div>
+<div class="pic">
+    <img src="{% static 'images/img2.jpg' %}" alt="restaurant">
+</div>
+
+</div>
+{% endblock %}

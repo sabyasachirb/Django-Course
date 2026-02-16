@@ -1,0 +1,33 @@
+.hm{
+    height: 100%;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    gap: 4rem;
+    margin-left: 3rem;
+}
+.pic img{
+    height: 92vh;
+}
+
+h1{
+    font-weight: bolder;
+}
+
+h3{
+    font-weight: bold;
+}
+
+p{
+    font-size: medium;
+    font-weight: 600;
+}

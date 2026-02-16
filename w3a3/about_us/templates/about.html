@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}<title>About Us</title>{% endblock %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="minimal-about-wrapper">
+    <div class="about-content">
+        
+        <div class="about-image">
+            <img src="{% static 'images/img1.jpg' %}" alt="Restaurant interior" onerror="this.src='https://via.placeholder.com/600x800/eeeeee/999999?text=Restaurant+Image'">
+        </div>
+
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                Founded on a passion for honest cooking, we believe in letting fresh ingredients speak for themselves. Every dish we serve is crafted with care, sourcing seasonal produce from local farmers we know and trust.
+            </p>
+            <p>
+                Whether you're stopping by for a quick bite or settling in for a long evening with friends, our goal is simple: to provide a warm space, exceptional food, and a moment to pause in your busy day.
+            </p>
+            
+            <div class="about-details">
+                <p><strong>Location:</strong> 123 Culinary Lane, Food District</p>
+                <p><strong>Hours:</strong> Mon-Sun, 11:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
