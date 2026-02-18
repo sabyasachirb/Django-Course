@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} AppPage {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>
+    <p>Name: {{name}}</p>
+    <p>Email: {{email}}</p>
+    <p>Ratings: {{select}}</p>
+</h1>
+
+
+{% endblock %}
