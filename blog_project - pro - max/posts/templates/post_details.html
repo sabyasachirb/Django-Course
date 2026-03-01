@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>{{ post.title }}</h1>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" class="img-fluid mb-3" alt="{{ post.title }}">
+            {% endif %}
+            <p class="lead">{{ post.content }}</p>
+            <p><strong>Author:</strong> {{ post.author.first_name }} {{ post.author.last_name }}</p>
+            <p><strong>Categories:</strong>
+                {% for cat in post.category.all %}
+                <span class="badge bg-secondary me-1">{{ cat.name }}</span>
+                {% endfor %}
+            </p>
+
+            <hr>
+            <h5>Comments ({{ comments|length }})</h5>
+            {% for comment in comments %}
+            <div class="card mb-2">
+                <div class="card-body">
+                    <strong>{{ comment.author.username }}</strong>
+                    <small class="text-muted ms-2">{{ comment.time }}</small>
+                    <p class="mb-0 mt-1">{{ comment.content }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-muted">No comments yet. Be the first!</p>
+            {% endfor %}
+
+            {% if request.user.is_authenticated %}
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h6>Add a Comment</h6>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ comment_form|crispy }}
+                        <input type="submit" value="Post Comment" class="btn btn-primary mt-2">
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <p class="mt-3"><a href="{% url 'login' %}">Log in</a> to leave a comment.</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
